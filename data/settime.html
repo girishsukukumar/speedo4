@@ -1,0 +1,44 @@
+<HTML>
+<head>
+<style>
+body, html {
+  height: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #000000;
+  color: #ff3300
+}
+
+table, th, td {
+  border: 5px "#ff3300";
+  border-collapse: collapse;
+}
+th, td {
+  padding: 15px;
+  text-align: left;
+}
+table#t01 {
+  width: 100%;    
+  background-color: powderblue;
+}
+
+</style>
+</head>
+<body>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<H1> <U>Device Configuration Page </U></H1>
+
+<HR>
+<HR>
+<form  action="/SetTimeOnDevice" method="POST">
+            <TABLE  border="5">
+			   <TR><TD> <B> Set Date(Eg:31-Jan-2025) </B>     <input  type="text"  name="deviceDate" maxlength="11" required ></TD></TR> 
+
+			   <TR><TD> <B> Set Time (Eg:14:10:52) </B>     <input  type="text"  name="deviceTime" maxlength="8" required ></TD></TR> 
+			        
+			  </TABLE>  
+			  <input  type="submit" value="Submit"> 
+			 </form>
+			 
+<HR>
+

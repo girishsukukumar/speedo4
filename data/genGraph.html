@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        canvas {
+            background-color: lightblue;
+			title : "hello";
+        }
+    </style>
+</head>
+<script src="chart.js"></script>
+<body>
+<canvas id="myChart" style="width:100%;max-width:600px"></canvas>
+<script>
+
+var timeValues = [0, 1, 2] ;
+var rpmValues = [0, 0, 0] ;
+var speedValues = [0.00, 0.00, 0.00] ;
+var powerValues = [1.69, 1.76, 1.76] ;
+
+new Chart("myChart", {
+  type: "line",
+  data: {
+    labels: timeValues,
+	
+    datasets: [
+	           {
+                fill: false,
+                data: rpmValues,
+				label : "RPM",
+				borderColor: "blue"
+               },
+			    {
+                fill: false,        
+                borderColor: "green",
+				label : "Speed",
+                data: speedValues
+               },
+			    {
+                fill: false,        
+                borderColor: "red",
+				label : "Power",
+                data: powerValues
+               }			   
+			  ]
+  },
+  options: {
+    legend: {display: true}, 
+    scales: {
+      yAxes: [{ticks: {min: 0, max:100}}],
+    }
+  }
+});
+</script>
+</body>
+</html>
