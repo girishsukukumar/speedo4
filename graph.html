@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        canvas {
+            background-color: lightblue;
+			title : "hello";
+        }
+    </style>
+</head>
+<script src="Chart.js"></script>
+<body>
+<canvas id="myChart" style="width:100%;max-width:600px"></canvas>
+<script>
+var timeValues = [50,60,70,80,90,100,110,120,130,140,150];
+var rpmValues = [7,8,8,9,9,9,10,11,14,14,15];
+var speedValues = [17,18,10, 19,29,11,25,16,24,54,60];
+var powerValues = [10,20,30,20,50,10,25,36, 54,64,10];
+
+new Chart("myChart", {
+  type: "line",
+  data: {
+    labels: timeValues,
+	
+    datasets: [
+	           {
+                fill: false,
+                data: rpmValues,
+				label : "RPM",
+				borderColor: "blue"
+               },
+			    {
+                fill: false,        
+                borderColor: "green",
+				label : "Speed",
+                data: speedValues
+               },
+			    {
+                fill: false,        
+                borderColor: "red",
+				label : "Power",
+                data: powerValues
+               }			   
+			  ]
+  },
+  options: {
+    legend: {display: true}, 
+    scales: {
+      yAxes: [{ticks: {min: 0, max:100}}],
+    }
+  }
+});
+var canvas = document.getElementById("myChart");
+var ctx = canvas.getContext("2d");
+ctx.font = "30px Arial";
+ctx.fillText("Hello World",10,50);
+</script>
+</body>
+</html>
+
+
